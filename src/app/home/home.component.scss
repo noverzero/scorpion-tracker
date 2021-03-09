@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&family=Nunito:wght@400;900&display=swap');
+$primary: rgb(214, 241, 170);
+$contrast:  rgb(57, 11, 117);
+
+
+button {
+    font-weight: bold;
+    background: $primary;
+    color: $contrast;
+    padding: .3em .8em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.play-container {
+    padding: 3em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+    
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+
+}
+
+.active {
+    background-color: yellow;
+    border: 4px solid red;
+}
+
+.notactive {
+    border: 4px solid rgb(178, 235, 105);
+}

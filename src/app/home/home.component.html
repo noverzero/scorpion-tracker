@@ -1,0 +1,37 @@
+<p>home works!</p>
+<div class="play-container">
+    <label>Scorpion Count</label>
+    <br>
+    <input type="number" min=0 [(ngModel)]="scorpionCount"/>
+    <br>
+    <strong>You said: </strong> {{ scorpionCount }}
+</div>
+<div class="play-container" [ngClass]="setClickCounterContainerClasses()">
+    <p>You've Clicked</p>
+    <button [class.active]="scorpionCount > 6" (click)= "countClick()">this</button>
+    <p>{{clickCounter}} times</p>
+</div>
+<div class="play-container" [style.background-color]="scorpionCount > 8 ? 'red' : 'purple'">
+    <div  >
+       <ng-template [ngIf]="scorpionCount > 4" [ngIfElse]="none" >
+           <p>That's a lot of scorpions.</p>
+       </ng-template>
+       <ng-template #none>
+            <p>Not too bad out there tonight</p>
+       </ng-template>
+    </div>
+    
+ </div>
+ <div 
+    class="play-container" 
+    [ngStyle]="{
+            'background-color':  scorpionCount > 8 ? 'red' : 'purple',
+            'border': clickCounter > 3 ? '4px solid black' : 'none'
+        }">
+    <ng-template [ngIf]="scorpionCount > 4" [ngIfElse]="none" >
+        <p>That's a lot of scorpions.</p>
+    </ng-template>
+    <ng-template #none>
+         <p>Not too bad out there tonight</p>
+    </ng-template>
+ </div>
